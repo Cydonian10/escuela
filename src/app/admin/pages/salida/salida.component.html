@@ -1,0 +1,59 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 mt-5">
+
+    <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.usuario.name}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="asistio">
+        <th mat-header-cell *matHeaderCellDef>Asistio</th>
+        <td mat-cell *matCellDef="let element"> {{element.asistio}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="descripcion">
+        <th mat-header-cell *matHeaderCellDef>Descripcion </th>
+        <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="descriptionSalida">
+        <th mat-header-cell *matHeaderCellDef> Description Salida </th>
+        <td mat-cell *matCellDef="let element"> {{element.descriptionSalida}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="horaEntrada">
+        <th mat-header-cell *matHeaderCellDef> Hora Entrada </th>
+        <td mat-cell *matCellDef="let element"> {{element.horaEntrada | date:'h:mm a'}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="horaSalida">
+        <th mat-header-cell *matHeaderCellDef> Hora Salida </th>
+        <td mat-cell *matCellDef="let element"> {{element.horaSalida | date:'h:mm a'}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+        <td mat-cell *matCellDef="let element">
+            <button (click)="openMarcarSalida(element)" mat-icon-button color="basic"
+                    aria-label="Example icon button with a menu icon">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn"
+                    aria-label="Example icon button with a menu icon">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

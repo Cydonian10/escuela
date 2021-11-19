@@ -1,0 +1,27 @@
+@import "/src/scss/variables.scss";
+
+h2 {
+    text-align: center;
+    border-top: 5px solid $color-primary;
+    border-bottom: 5px solid $color-primary;
+    padding: 10px 0;
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.servicios {
+    background-color: #f8f8f8;
+    padding: 20px;
+}
+
+.servicios-grid {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.noticias {
+    margin-top: 20px;
+}

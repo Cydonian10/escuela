@@ -1,0 +1,13 @@
+.button {
+    display: inline-block;
+    background-color: $color-primary;
+    justify-self: center;
+    color: #fff;
+    padding: 11px 40px;
+    border: none;
+    margin-top: 10px;
+
+    &:active {
+        transform: scale(0.98);
+    }
+}

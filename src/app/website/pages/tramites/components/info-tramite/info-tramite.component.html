@@ -1,0 +1,17 @@
+<form (submit)="handleSubmit($event)" class="form_info-tramite">
+    <h2>Seguimiento Tramite</h2>
+    <div class="codigo">
+        <label for="">Codigo</label>
+        <div class="form-control">
+            <input [formControl]="myInput" class="effect-8" type="text" placeholder="Placeholder Text">
+            <span class="focus-border">
+                <i></i>
+            </span>
+        </div>
+    </div>
+
+    <div class="btn-container">
+        <button class="button">Enviar</button>
+    </div>
+</form>
+<app-modal-info [show]="show" (onShow)="onshow($event)" [tramite]="tramite"></app-modal-info>

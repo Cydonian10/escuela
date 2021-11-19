@@ -1,0 +1,68 @@
+<div class="mat-elevation-z8 mt-5">
+    <table mat-table [dataSource]="dataSource">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef> Nombre </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} {{ element.apellidos}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="tramiteEstado">
+            <th mat-header-cell *matHeaderCellDef> Tramite estado </th>
+            <td mat-cell *matCellDef="let element">
+                <p [ngClass]="{
+                    pendiente:element.tramiteEstado === 'pendiente', 
+                    proceso:element.tramiteEstado === 'proceso',
+                    rechazado:element.tramiteEstado === 'rechazado', 
+                    aprobado:element.tramiteEstado === 'aprobado'}">
+                    {{element.tramiteEstado}}
+                </p>
+            </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="visto">
+            <th mat-header-cell *matHeaderCellDef> Visto </th>
+            <td mat-cell *matCellDef="let element">
+                <p *ngIf="element.visto === false">{{'por revisar' | titlecase}}</p>
+                <p *ngIf="element.visto === true">{{'revisado' | titlecase}}</p>
+            </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="tramiteNombre">
+            <th mat-header-cell *matHeaderCellDef> Tramite Nombre </th>
+            <td mat-cell *matCellDef="let element"> {{element.tramiteNombre}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="fecha">
+            <th mat-header-cell *matHeaderCellDef> fecha </th>
+            <td mat-cell *matCellDef="let element"> {{element.fecha|date}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="editar">
+            <th mat-header-cell *matHeaderCellDef> Acciones </th>
+            <td mat-cell *matCellDef="let element">
+                <button (click)="openUpdate(element)" mat-icon-button color="basic"
+                        aria-label="Example icon button with a menu icon">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button (click)="removeTramite(element)" mat-icon-button color="warn"
+                        aria-label="Example icon button with a menu icon">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+</div>

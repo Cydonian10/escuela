@@ -1,0 +1,39 @@
+@import "/src/scss/variables.scss";
+
+.full {
+    width: 100%;
+}
+
+.asitencia_title {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.asistencia_error {
+    border: 1px solid $color-error;
+    padding: 10px;
+    margin-top: 10px;
+    background: $color-error;
+    color: white;
+    text-align: center;
+    visibility: hidden;
+}
+
+.show_error {
+    visibility: visible;
+}
+
+.asistencia_name_profesor {
+    text-align: center;
+
+}
+
+.container_marcar-asistencia {
+    margin-top: 10px;
+    border: 1px solid #444;
+}
+
+.container_buttons {
+    display: flex;
+    gap: 10px;
+}

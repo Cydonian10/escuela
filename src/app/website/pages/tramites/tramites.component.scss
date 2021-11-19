@@ -1,0 +1,8 @@
+@media (min-width:700px) {
+
+    .grid-tramite {
+        display: grid;
+        grid-template-columns: 1fr minmax(200px, 320px);
+        gap: 20px;
+    }
+}

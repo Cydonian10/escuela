@@ -1,0 +1,48 @@
+@import "/src/scss/inputs.scss";
+@import "/src/scss/variables.scss";
+@import "/src/scss/button.scss";
+
+
+
+
+@media (min-width:700px) {
+
+    .form-nombre,
+    .form-telefono-dni {
+        display: flex;
+        gap: 5px;
+    }
+}
+
+.nombre,
+.apellidos,
+.email,
+.telefono,
+.dni {
+    width: 100%;
+}
+
+.fecha {
+    display: none;
+}
+
+h2 {
+    text-align: center;
+    border-top: 5px solid $color-primary;
+    border-bottom: 5px solid $color-primary;
+    padding: 10px 0;
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: end;
+}
+
+.error {
+    color: $color-error;
+    transition: 0.5 ease;
+}

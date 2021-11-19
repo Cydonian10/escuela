@@ -1,0 +1,132 @@
+<form (submit)="handleSubmit()" [formGroup]="myForm" class="form_create-tramite">
+
+    <h2>Formulairo de Tramite</h2>
+
+    <!--! Fecha de solicitud -->
+    <div class="fecha">
+        <label for="">Fecha</label>
+        <div class="form-control">
+            <input formControlName="fecha"
+                   class="effect-8"
+                   type="datetime-local" placeholder="Placeholder Text">
+            <span class="focus-border">
+                <i></i>
+            </span>
+        </div>
+    </div>
+
+    <!--! nombre y apellidos -->
+    <div class="form-nombre">
+
+        <div class="nombre">
+            <label for="">Nombre</label>
+            <div class="form-control">
+                <input formControlName="name"
+                       class="effect-8" type="text" placeholder="Placeholder Text">
+                <span class="focus-border">
+                    <i></i>
+                </span>
+            </div>
+            <span *ngIf="campoValido('name')" class="error">{{ 'Campo requerido' | titlecase }}</span>
+        </div>
+
+        <div class="apellidos">
+            <label for="">Apellidos</label>
+            <div class="form-control">
+                <input formControlName="apellidos"
+                       class="effect-8" type="text" placeholder="Placeholder Text">
+                <span class="focus-border">
+                    <i></i>
+                </span>
+            </div>
+            <span *ngIf="campoValido('apellidos')" class="error">{{ 'Campo requerido' | titlecase }}</span>
+        </div>
+
+    </div>
+
+    <!--! email -->
+    <div class="email">
+        <label for="">Email</label>
+        <div class="form-control">
+            <input formControlName="email"
+                   class="effect-8" type="email" placeholder="Ingresa su email">
+            <span class="focus-border">
+                <i></i>
+            </span>
+        </div>
+        <span *ngIf="campoValido('email')" class="error">{{ 'Campo requerido' | titlecase }}</span>
+    </div>
+
+    <!--! telefno y dni -->
+    <div class="form-telefono-dni">
+        <div class="telefono">
+            <label>Telefono</label>
+            <div class="form-control">
+                <input formControlName="telefono"
+                       class="effect-8" type="tel" placeholder="Ingresa su email">
+                <span class="focus-border">
+                    <i></i>
+                </span>
+                <span *ngIf="campoValido('telefono')" class="error">{{ 'Campo requerido' | titlecase }}</span>
+            </div>
+        </div>
+        <div class="dni">
+            <label>Dni</label>
+            <div class="form-control">
+                <input formControlName="dni"
+                       class="effect-8" type="tel" placeholder="Ingresa su email">
+                <span class="focus-border">
+                    <i></i>
+                </span>
+                <span *ngIf="campoValido('dni')" class="error">{{ 'Campo requerido' | titlecase }}</span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="matricula">
+        <label>Tipo de Matricula</label>
+        <select formControlName="tramiteNombre" class="select-css">
+            <option>Selecciona una opción</option>
+            <option value="matricula">Matricula</option>
+            <option value="Martes">Martes</option>
+            <option value="Miércoles">Miércoles</option>
+            <option value="Jueves">Jueves</option>
+            <option value="Viernes">Viernes</option>
+        </select>
+        <span *ngIf="campoValido('tramiteNombre')" class="error">{{ 'Campo requerido' | titlecase }}</span>
+    </div>
+
+    <div class="file">
+        <label>File</label>
+        <div class="form-control">
+            <input #asInputFile
+                   (change)="uploadFile($event)"
+                   class="effect-8 file" type="file" placeholder="Ingresa su email">
+            <span class="focus-border">
+                <i></i>
+            </span>
+        </div>
+        <span *ngIf="url">{{url}}</span>
+    </div>
+
+    <div class="descripcion">
+        <label for="hola">Descripcion</label>
+        <div class="form-control">
+            <textarea formControlName="descriptcionPadre"
+                      name="" class="effect-8" id="" cols="30" rows="3"></textarea>
+            <span class="focus-border">
+                <i></i>
+            </span>
+        </div>
+        <span *ngIf="campoValido('descriptcionPadre')" class="error">{{ 'Campo requerido' | titlecase }}</span>
+    </div>
+
+
+    <div class="btn-container">
+        <button class="button">Enviar</button>
+    </div>
+
+</form>
+
+<app-card-tramite (onShow)="onshow($event)" [show]="show" [codigo]="codigo"></app-card-tramite>

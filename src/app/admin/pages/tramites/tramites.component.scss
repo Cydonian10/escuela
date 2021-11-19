@@ -1,0 +1,25 @@
+@import "/src/scss/variables.scss";
+
+table {
+    width: 100%;
+}
+
+.pendiente {
+    width: 100px;
+    padding: 5px;
+    text-align: center;
+    background-color: $color-alert;
+    color: white;
+}
+
+.proceso {
+    color: $color-primary;
+}
+
+.rechazado {
+    color: $color-error;
+}
+
+.aprobado {
+    color: $color-success;
+}

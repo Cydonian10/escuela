@@ -1,0 +1,57 @@
+<header class="hero">
+    <nav class="nav container">
+        <div class="nav__logo">
+            <h2 class="nav_title">Curso Css</h2>
+        </div>
+
+
+        <div>
+            <ul class="nav__links nav__link--menu desktop">
+                <li class="nav__items">
+                    <a routerLink="/tramites" class="nav__link">Tramites</a>
+                </li>
+                <li class="nav__items">
+                    <a href="#" class="nav__link">Contacto</a>
+                </li>
+                <li class="nav__items">
+                    <a href="#" class="nav__link">Blog</a>
+                </li>
+                <li class="nav__items">
+                    <a href="#" class="nav__link">Acerca</a>
+                </li>
+
+
+            </ul>
+
+            <div class="nav__menu">
+                <img (click)="toogleMenu()" class="img-menu" src="assets/icons/menu.svg" alt="menu">
+            </div>
+        </div>
+
+        <ul class="nav__links-mobile nav__link--menu mobile" [ngClass]="{show: show}">
+            <li class="nav__items">
+                <a href="#" class="nav__link">Inicio</a>
+            </li>
+            <li class="nav__items">
+                <a href="#" class="nav__link">Contacto</a>
+            </li>
+            <li class="nav__items">
+                <a href="#" class="nav__link">Blog</a>
+            </li>
+            <li class="nav__items">
+                <a href="#" class="nav__link">Acerca</a>
+            </li>
+
+            <img (click)="toogleMenu()" class="img-close" src="assets/icons/close.svg" alt="close">
+
+        </ul>
+
+
+    </nav>
+    <section class="hero__container container">
+        <h1 class="hero__title">Aprende Css3</h1>
+        <p class="hero__paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum facilis ea
+            provident quod quo, non nobis, saepe quos culpa soluta maiores accusamu</p>
+        <a href="#" class="cta">Comienza ahora</a>
+    </section>
+</header>

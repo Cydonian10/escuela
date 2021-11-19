@@ -1,0 +1,24 @@
+<div mat-dialog-title>
+    Marcar salida : {{ horaSalida | date:'h:mm a' }}
+</div>
+
+<div mat-dialog-content>
+    <form [formGroup]="myForm">
+
+
+
+        <mat-form-field class="full" appearance="standard">
+            <mat-label>Descriptcion</mat-label>
+            <textarea placeholder="Agrege una descripcion" formControlName="descriptionSalida" matInput></textarea>
+            <!-- <mat-error *ngIf="getRequired('descriptcion')">Campor requerido</mat-error>
+                                  <mat-error *ngIf="getMaxLength('descriptcion')">Maximo 100 caracteres</mat-error> -->
+        </mat-form-field>
+
+    </form>
+
+</div>
+
+<div mat-dialog-actions>
+    <button [matDialogClose] color="warn" mat-raised-button>Cancelar</button>
+    <button (click)="handleSubmit()" color="primary" mat-raised-button>Enviar</button>
+</div>

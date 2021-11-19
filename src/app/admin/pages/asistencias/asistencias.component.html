@@ -1,0 +1,45 @@
+<div class="container mt-5">
+    <h1 class="asitencia_title">Marcar Asistencia Profesor</h1>
+
+    <mat-form-field class="full" appearance="standard">
+        <mat-label>Email</mat-label>
+        <input type="text" [formControl]="myInput"
+               matInput placeholder="Ingrese su email">
+        <mat-error>Campor requerido</mat-error>
+    </mat-form-field>
+
+    <button (click)="usuarioByEmail()"
+            class="full" color="primary" mat-stroked-button>
+        Marcar Entrada
+    </button>
+
+    <div class="asistencia_error" [ngClass]="{'show_error': error}">
+        Error su email no existe
+    </div>
+
+</div>
+
+<div class="container mt-5">
+
+    <mat-card class="asistencia_name_profesor" *ngIf="usuario.name">
+
+        <div>
+            <strong>Profesor: </strong> {{usuario.name}} {{usuario.lastName}}
+        </div>
+
+        <div class="mt-5" mat-dialog-content>
+
+            <p><strong>Hora de Entrada : </strong>{{ horaEntrada | date:'hh:mm a' }}</p>
+
+        </div>
+
+        <div class="container_buttons mt-5">
+            <button class="full" color="warn" mat-stroked-button>Cancelar</button>
+            <button (click)="marcarAsistencia()"
+                    class="full" color="primary" mat-stroked-button>
+                Registrar Entrada
+            </button>
+        </div>
+    </mat-card>
+
+</div>

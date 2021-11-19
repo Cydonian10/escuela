@@ -1,0 +1,34 @@
+.full {
+    width: 100%;
+}
+
+.descargar_title {
+    margin-right: 10px;
+}
+
+.descargar {
+    text-align: center;
+}
+
+.radio {
+    margin-right: 20px;
+}
+
+.estado_container {
+    display: inline-block;
+}
+
+strong {
+    display: inline-blocks;
+}
+
+
+@media (min-width:700px) {
+
+    .nombres,
+    .fecha_email,
+    .dni_telefono {
+        display: flex;
+        gap: 10px;
+    }
+}

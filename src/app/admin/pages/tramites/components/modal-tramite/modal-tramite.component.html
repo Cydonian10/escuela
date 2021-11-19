@@ -1,0 +1,110 @@
+<h1 mat-dialog-title>Revision de solicitud de tipo {{ tramiteNombre?.value }} - {{fecha?.value | date}} </h1>
+
+<div mat-dialog-content>
+
+    <form [formGroup]="myForm">
+
+        <div class="nombres">
+            <mat-form-field class="full" appearance="standard">
+                <mat-label>Nombre</mat-label>
+                <input formControlName="name"
+                       matInput placeholder="Ingrese su nombre">
+            </mat-form-field>
+
+
+            <mat-form-field class="full" appearance="standard">
+                <mat-label>Apellidos</mat-label>
+                <input formControlName="apellidos"
+                       matInput placeholder="Ingrese su apellido">
+            </mat-form-field>
+        </div>
+
+        <div class="fecha_email">
+            <mat-form-field class="full" appearance="standard">
+                <mat-label>fecha</mat-label>
+                <input formControlName="fecha"
+                       matInput placeholder="Ingrese su fecha">
+            </mat-form-field>
+
+            <mat-form-field class="full" appearance="standard">
+                <mat-label>Email</mat-label>
+                <input formControlName="email"
+                       matInput placeholder="Ingrese su email">
+            </mat-form-field>
+        </div>
+
+        <div class="dni_telefono">
+            <mat-form-field class="full" appearance="standard">
+                <mat-label>Dni</mat-label>
+                <input formControlName="dni"
+                       matInput placeholder="Ingrese su Dnis">
+            </mat-form-field>
+
+            <mat-form-field class="full" appearance="standard">
+                <mat-label>Telefono</mat-label>
+                <input formControlName="telefono"
+                       matInput placeholder="Ingrese su telefono">
+            </mat-form-field>
+        </div>
+
+        <mat-form-field class="full" appearance="standard">
+            <mat-label>Descriptcion</mat-label>
+            <textarea placeholder="Agrege una descripcion" formControlName="descriptcionPadre" matInput></textarea>
+            <!-- <mat-error *ngIf="getRequired('descriptcion')">Campor requerido</mat-error>
+                          <mat-error *ngIf="getMaxLength('descriptcion')">Maximo 100 caracteres</mat-error> -->
+        </mat-form-field>
+
+        <div class="descargar" *ngIf="archivoPadre?.value">
+            <strong class="descargar_title">Tiene un archivo para descargar :</strong>
+            <a #asdownload [href]="archivoPadre?.value" target="_blanck" [download]="'asdfadf'">
+            </a>
+            <button color="primary" (click)="downloadFile()" mat-raised-button>desacargar documento</button>
+        </div>
+
+        <!-- TODO Administrador -->
+
+        <!-- !Tramites estado-->
+
+        <p>
+            <strong class="mt-10">Tramite Estado</strong>
+        </p>
+        <mat-radio-group formControlName="tramiteEstado" class="mt-5 estado_container" aria-label="Select an option">
+            <mat-radio-button class="radio" value="pendiente">Pendiente</mat-radio-button>
+            <mat-radio-button class="radio" value="rechazado">Rechazado</mat-radio-button>
+            <mat-radio-button class="radio" value="proceso">Processo</mat-radio-button>
+            <mat-radio-button class="radio" value="aprobado">Aprobado</mat-radio-button>
+        </mat-radio-group>
+
+        <div class="form-control mt-10">
+            <p>
+                <label><strong>Subir un archivo para el padre</strong> </label>
+            </p>
+            <input #asInputFile
+                   (change)="($event)" class="mt-5"
+                   type="file" placeholder="Ingresa su email">
+        </div>
+
+        <mat-form-field class="full" appearance="standard">
+            <mat-label>Descriptcion Administrador</mat-label>
+            <textarea placeholder="Agrege una descripcion" formControlName="descriptcionRecepcionista"
+                      matInput></textarea>
+            <!-- <mat-error *ngIf="getRequired('descriptcion')">Campor requerido</mat-error>
+                                  <mat-error *ngIf="getMaxLength('descriptcion')">Maximo 100 caracteres</mat-error> -->
+        </mat-form-field>
+
+        <!-- todo tramite en revisado o ignorado -->
+
+        <div>
+            <p><strong>Marcar si ya lo viste</strong></p>
+            <mat-checkbox formControlName="visto">Visto</mat-checkbox>
+
+        </div>
+
+    </form>
+
+</div>
+
+<div mat-dialog-actions>
+    <button [mat-dialog-close]="undefined">Cancelar</button>
+    <button (click)="handleSubmit()">Enviar</button>
+</div>

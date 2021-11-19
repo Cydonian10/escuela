@@ -1,0 +1,64 @@
+@import "/src/scss/variables.scss";
+
+figure {
+
+    object-fit: cover;
+}
+
+img {
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.card {
+    max-width: 350px;
+    min-width: 300px;
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.33);
+    -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.33);
+    -moz-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.33);
+    background-color: white;
+}
+
+.card_body {
+    padding: 10px;
+}
+
+.card-title {
+    text-align: center;
+    font-weight: bold;
+}
+
+.divider {
+    border-bottom: 1px solid #3333;
+    margin: 10px 0;
+}
+
+.card-content {
+    text-align: justify;
+}
+
+.card-footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+button {
+    border: none;
+    padding: 10px 80px;
+    background-color: $color-primary;
+    color: white;
+
+    &:active {
+        transform: scale(0.99);
+    }
+
+
+}
+
+.top {
+    margin-top: 100px;
+}

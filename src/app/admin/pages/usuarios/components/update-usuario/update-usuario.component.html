@@ -1,0 +1,61 @@
+<h1 mat-dialog-title>Formulario para crear usuarios</h1>
+
+<div mat-dialog-content>
+
+    <form [formGroup]="myForm">
+        <mat-form-field class="full" appearance="standard">
+            <mat-label>Nombre</mat-label>
+            <input formControlName="name"
+                   type="text" matInput placeholder="Ingrese su nombre del usuario ">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="full" appearance="standard">
+            <mat-label>Apellidos</mat-label>
+            <input formControlName="lastName"
+                   type="text" matInput placeholder="Ingrese su apellidos del usuario">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="full" appearance="standard">
+            <mat-label>DNI</mat-label>
+            <input formControlName="dni"
+                   type="number" matInput placeholder="Ingrese su dni del usuario">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="full" appearance="standard">
+            <mat-label>Email</mat-label>
+            <input formControlName="email"
+                   type="email" matInput placeholder="Ingrese su nombr del usuario">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="full" appearance="standard">
+            <mat-label>Password</mat-label>
+            <input formControlName="password"
+                   type="password" matInput placeholder="Ingrese su nombr del usuario">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="full" appearance="standard">
+            <mat-label>Grado Seccion</mat-label>
+            <input formControlName="gradoSeccion"
+                   type="text" matInput placeholder="Ingrese su nombr del usuario">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-radio-group formControlName="rol" class="mt-5 radio" aria-label="Select an option">
+            <mat-radio-button class="radio" value="admin">Administrador</mat-radio-button>
+            <mat-radio-button class="radio" value="profesor">Profesor</mat-radio-button>
+            <mat-radio-button class="radio" value="asistencia">Asistencia</mat-radio-button>
+        </mat-radio-group>
+
+    </form>
+
+</div>
+
+<div mat-dialog-actions>
+    <button class="mt-10" (click)="handleSubmit()" mat-raised-button color="primary">Enviar</button>
+    <button class="mt-10" [mat-dialog-close] mat-raised-button color="warn">Cancelar</button>
+</div>

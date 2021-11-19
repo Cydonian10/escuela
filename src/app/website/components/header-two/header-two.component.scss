@@ -1,0 +1,101 @@
+@import "/src/scss/variables";
+
+.nav_container {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+a {}
+
+.nav {
+    background-color: $color-primary;
+    height: 80px;
+    color: white;
+    animation: header 0.6s ease-in-out forwards;
+
+    & img {
+        margin-right: 20px;
+    }
+
+    &_container {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 80%;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
+
+    &_label,
+    &_input {
+        display: none;
+    }
+
+    &_logo {
+        font-size: 3rem;
+        font-weight: 900;
+    }
+
+    &_menu {
+        display: grid;
+        grid-auto-flow: column;
+        gap: 3rem;
+    }
+
+    &_item {
+        --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
+
+        &::after {
+            content: "";
+            background-color: $color-secundary;
+            display: block;
+            width: 90%;
+            margin-top: 3px;
+            height: 3px;
+            clip-path: var(--clippy);
+            transition: clip-path 0.2s ease-in-out;
+        }
+
+        &:hover {
+            --clippy: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+    }
+}
+
+// @keyframes header {
+//   0% {
+//     transform: translateY(-600px);
+//   }
+//   100% {
+//     transform: translateY(0);
+//   }
+// }
+
+@media (max-width: 700px) {
+    .nav_label {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav_menu {
+        position: fixed;
+        z-index: 2000;
+        padding: 20px;
+        top: 80px;
+        width: 100%;
+        background-color: $color-primary;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-evenly;
+        clip-path: circle(0 at center);
+        transition: clip-path 0.7s ease-in-out;
+        z-index: 1000;
+    }
+
+    .nav_input:checked+.nav_menu {
+        clip-path: circle(100% at center);
+        z-index: 1000;
+    }
+}
