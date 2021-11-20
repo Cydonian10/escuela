@@ -6,6 +6,7 @@ const routes: Routes = [
   {
     path: "",
     component: NavigationComponent,
+
     children: [
       { path: "tramites", loadChildren: () => import( './pages/tramites/tramites.module' ).then( m => m.TramitesModule ) },
       { path: "usuarios", loadChildren: () => import( './pages/usuarios/usuarios.module' ).then( m => m.UsuariosModule ) },

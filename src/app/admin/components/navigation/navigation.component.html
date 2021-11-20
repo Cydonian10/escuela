@@ -4,10 +4,9 @@
                [mode]="(isHandset$ | async) ? 'over' : 'side'"
                [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+    <mat-nav-list *ngFor="let item of menu">
+      <h4>{{item.titulo}}</h4>
+      <a *ngFor="let sub of item.submenu" mat-list-item [routerLink]="sub.url">{{sub.titulo}}</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -20,7 +19,14 @@
               *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>fronEscuela</span>
+      <div class="nav_container">
+        <span>fronEscuela</span>
+        <div class="perfil">
+          <p>{{ usuario.name }} {{usuario.lastName}} </p>
+          <button (click)="logout()"
+                  color="warn" mat-raised-button>Salir</button>
+        </div>
+      </div>
     </mat-toolbar>
 
     <div class="container">

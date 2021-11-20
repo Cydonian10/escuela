@@ -1,0 +1,33 @@
+<div class="login-design">
+    <div class="waves">
+        <img src="assets/images/loginPerson.png" alt="" />
+    </div>
+    <div class="login">
+        <div class="login-data">
+            <!-- <img src="assets/collab.png" alt="" /> -->
+            <img src="assets/images/collab.png" alt="" />
+            <h1>Inicio de Sesión</h1>
+
+            <form [formGroup]="myForm" class="login-form">
+                <div class="input-group">
+                    <label class="input-fill">
+                        <input formControlName="email"
+                               type="email" name="email" id="email" required />
+                        <span class="input-label">Correo Electrónico</span>
+                        <i class="fas fa-envelope"></i>
+                    </label>
+                </div>
+                <div class="input-group">
+                    <label class="input-fill">
+                        <input formControlName="password"
+                               type="password" name="password" id="password" required />
+                        <span class="input-label">Contraseña</span>
+                        <i class="fas fa-lock"></i>
+                    </label>
+                </div>
+                <input (click)="handleSubmit()" type="submit" value="Iniciar Sesión" class="btn-login" />
+            </form>
+
+        </div>
+    </div>
+</div>

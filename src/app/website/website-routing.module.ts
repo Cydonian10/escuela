@@ -18,6 +18,12 @@ const routes: Routes = [
     children: [
       { path: "tramites", loadChildren: () => import( "./pages/tramites/tramites.module" ).then( m => m.TramitesModule ) }
     ]
+  },
+  {
+    path: "",
+    children: [
+      { path: "auth", loadChildren: () => import( "./pages/login/login.module" ).then( m => m.LoginModule ) }
+    ]
   }
 ];
 

@@ -15,3 +15,17 @@
   top: 0;
   z-index: 1;
 }
+
+.nav_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.perfil {
+  display: flex;
+
+  p {
+    margin-right: 10px;
+  }
+}

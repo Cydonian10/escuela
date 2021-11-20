@@ -3,6 +3,7 @@ import { IUsuario, IUsuariosResponse, CreateUserDto, IUsuarioResponse, UpdateUse
 import { BehaviorSubject, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { Rol } from '@models/rol.enum';
 
 @Injectable( {
   providedIn: 'root'
@@ -11,14 +12,34 @@ export class UsuariosService {
 
   private apiUrl: string = environment.apiUrl;
   private _usuarios$: BehaviorSubject<IUsuario[]> = new BehaviorSubject<IUsuario[]>( [] );
+  private _user: BehaviorSubject<IUsuario> = new BehaviorSubject<IUsuario>( {
+    id: 0,
+    name: '',
+    lastName: '',
+    dni: '',
+    rol: Rol.pro,
+    telefono: '',
+    email: '',
+    password: '',
+    gradoSeccion: ''
+  } );
 
   public get usuarios$ () {
     return this._usuarios$.asObservable();
   }
 
+  public get user$ () {
+    return this._user.asObservable();
+  }
+
   constructor(
     private http: HttpClient
   ) { }
+
+  setUser ( value: IUsuario ) {
+    this._user.next( value );
+  }
+
 
   findAll () {
     if ( this._usuarios$.value.length === 0 ) {
@@ -55,4 +76,5 @@ export class UsuariosService {
   usuarioByEmail ( email: string ) {
     return this.http.get<IUsuarioResponse>( `${ this.apiUrl }/users/email/${ email }` );
   }
+
 }
