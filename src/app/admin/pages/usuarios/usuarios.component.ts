@@ -48,7 +48,6 @@ export class UsuariosComponent implements OnInit, OnDestroy {
   findUsuarios () {
     this.subscription.add( this.usuariosService.usuarios$.subscribe(
       resp => {
-        console.log( resp );
         this.dataSource = new MatTableDataSource<IUsuario>( resp );
       }
     ) );

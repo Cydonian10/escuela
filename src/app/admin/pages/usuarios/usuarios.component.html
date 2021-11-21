@@ -63,6 +63,13 @@
                         aria-label="Example icon button with a menu icon">
                     <mat-icon>delete</mat-icon>
                 </button>
+                <button [routerLink]="['/admin/usuarios',element.id]"
+                        mat-icon-button color="basic"
+                        aria-label="Example icon button with a menu icon">
+                    <mat-icon>
+                        settings_applications
+                    </mat-icon>
+                </button>
             </td>
         </ng-container>
 

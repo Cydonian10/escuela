@@ -11,7 +11,8 @@ const routes: Routes = [
       { path: "tramites", loadChildren: () => import( './pages/tramites/tramites.module' ).then( m => m.TramitesModule ) },
       { path: "usuarios", loadChildren: () => import( './pages/usuarios/usuarios.module' ).then( m => m.UsuariosModule ) },
       { path: "asistencias", loadChildren: () => import( './pages/asistencias/asistencias.module' ).then( m => m.AsistenciasModule ) },
-      { path: "asistencias", loadChildren: () => import( './pages/salida/salida.module' ).then( m => m.SalidaModule ) }
+      { path: "asistencias", loadChildren: () => import( './pages/salida/salida.module' ).then( m => m.SalidaModule ) },
+      { path: "usuarios", loadChildren: () => import( './pages/detalle-asistencia/detalle-asistencia.module' ).then( m => m.DetalleAsistenciaModule ) }
     ]
   }
 ];

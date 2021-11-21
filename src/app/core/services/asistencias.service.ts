@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CreateAsistenciaDto, IAsitenciaLocalStorage, IAsitenciaResponse, UpdateAsisteciaDto } from '@models/asistencia.interface';
+import { CreateAsistenciaDto, IAsitenciaLocalStorage, IAsitenciaResponse, IResponseAsistenciaByUsuario, UpdateAsisteciaDto } from '@models/asistencia.interface';
 import { environment } from 'src/environments/environment';
 import { IAsistencia } from '../../models/asistencia.interface';
 
@@ -43,6 +43,11 @@ export class AsistenciasService {
     } );
     localStorage.setItem( 'asistenciasDia', JSON.stringify( this.asistenciasDelDia ) );
 
+  }
+
+  //!TRAERME LAS ASISTENCIAS POR USUARIO
+  asistenciaByUsuario ( id: number ) {
+    return this.http.get<IResponseAsistenciaByUsuario>( `${ this.apiUrl }/users/usuarios-asistencias/${ id }` );
   }
 
   limpiarRegistrosAsitencia () {

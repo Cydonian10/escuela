@@ -42,7 +42,6 @@ export class NavigationComponent implements OnInit, OnDestroy {
     this.menu = this.menuService.getMenu();
     this.subscription.add(
       this.usuariosService.user$.subscribe( resp => {
-        console.log( resp );
         this.usuario = resp;
       } )
     );

@@ -1,3 +1,4 @@
+import { Rol } from './rol.enum';
 import { IUsuario } from './usuarios.interface';
 export interface IAsitenciaResponse {
     message: string;
@@ -45,4 +46,23 @@ export interface IAsitenciaLocalStorage {
     asistio: boolean,
     description: string,
     descriptionSalida: string,
+}
+
+//!Asistencia por usuario
+
+export interface IResponseAsistenciaByUsuario {
+    data: {
+        id: number;
+        name: string;
+        lastName: string;
+        dni: string;
+        rol: Rol;
+        telefono: string;
+        email: string;
+        password: string;
+        gradoSeccion: string;
+
+        asistencia: IAsistencia[];
+    };
+
 }

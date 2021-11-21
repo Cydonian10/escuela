@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit {
   }
 
   handleSubmit () {
-    console.log( this.myForm.value );
     this.authService.login( this.myForm.get( 'email' )?.value, this.myForm.get( 'password' )?.value ).subscribe( resp => {
       this.router.navigateByUrl( "/admin/tramites" );
     } );
