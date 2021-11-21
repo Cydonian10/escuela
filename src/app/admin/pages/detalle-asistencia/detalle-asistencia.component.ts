@@ -6,6 +6,7 @@ import compareAsc from 'date-fns/compareAsc';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { IAsistencia } from '@models/asistencia.interface';
 import format from 'date-fns/format';
+import es from 'date-fns/locale/es';
 
 @Component( {
   selector: 'app-detalle-asistencia',
@@ -66,7 +67,7 @@ export class DetalleAsistenciaComponent implements OnInit {
     this.asistenciasMostrar = otros.map( ( item ) => {
       const horaEntrada = format( new Date( item.horaEntrada ), 'h:mm bbb' );
       const horaSalida = format( new Date( item.horaSalida ), 'h:mm bbb' );
-      const fecha = format( new Date( item.fecha ), 'y/MMM/EEEEEE' );
+      const fecha = format( new Date( item.fecha ), 'y/MMM/e', { locale: es } );
       return { ...item, horaEntrada, fecha, horaSalida, total: otros.length, asistidos: asistenciasTotal };
     } );
 
@@ -84,21 +85,7 @@ export class DetalleAsistenciaComponent implements OnInit {
   }
 
   //!EXPORTAR EN FORMATO CSV
-  // descargarCsv () {
-  //   new AngularCsv( this.asistenciasMostrar, 'asistencias', {
-  //     fieldSeparator: '          |           ',
-  //     quoteStrings: '"',
-  //     decimalseparator: '.',
-  //     showLabels: true,
-  //     showTitle: true,
-  //     title: `${ this.nombre } `,
-  //     useBom: true,
-  //     noDownload: false,
-  //     headers: [ "#Id", "Hora de Salida", "Hora de Entrada", "Fecha", "Asistio", "Tardanza", "Descripcion", "total de asistencias", "total de dias" ],
-  //     useHeader: false,
-  //     nullToEmptyString: false,
-  //   } );
-  // }
+
 
 
 }
