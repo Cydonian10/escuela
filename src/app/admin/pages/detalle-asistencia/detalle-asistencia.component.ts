@@ -67,8 +67,8 @@ export class DetalleAsistenciaComponent implements OnInit {
     const asistenciasTotal = this.totalAsistencias( this.asistencias );
 
     this.asistenciasMostrar = otros.map( ( item ) => {
-      const horaEntrada = item.horaEntrada ? format( new Date( item.horaEntrada ), 'h:mm bbb' ) : null;
-      const horaSalida = item.horaSalida ? format( new Date( item.horaSalida ), 'h:mm bbb' ) : null;
+      const horaEntrada = item.horaEntrada ? format( new Date( item.horaEntrada ), 'hh:mm aaa' ) : null;
+      const horaSalida = item.horaSalida ? format( new Date( item.horaSalida ), 'hh:mm aaa' ) : null;
       const fecha = format( new Date( item.fecha ), 'y/MMM/dd', { locale: es } );
       return { ...item, horaEntrada, fecha, horaSalida, total: otros.length, asistidos: asistenciasTotal };
     } );
