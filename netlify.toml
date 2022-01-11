@@ -1,5 +1,5 @@
 [build]
-  publish = "dist/frontEscuela"
+  publish = "dist/fronEscuela"
   command = "ng build"
 [[redirects]]
   from = "/*"
