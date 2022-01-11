@@ -31,12 +31,7 @@
             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
         </mat-form-field>
 
-        <mat-form-field class="full" appearance="standard">
-            <mat-label>Password</mat-label>
-            <input formControlName="password"
-                   type="password" matInput placeholder="Ingrese su nombr del usuario">
-            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        </mat-form-field>
+
 
         <mat-form-field class="full" appearance="standard">
             <mat-label>Grado Seccion</mat-label>
@@ -45,10 +40,12 @@
             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
         </mat-form-field>
 
-        <mat-radio-group formControlName="rol" class="mt-5 radio" aria-label="Select an option">
+        <mat-radio-group formControlName="rol" class="mt-5 radio"
+                         aria-label="Select an option">
             <mat-radio-button class="radio" value="admin">Administrador</mat-radio-button>
             <mat-radio-button class="radio" value="profesor">Profesor</mat-radio-button>
-            <mat-radio-button class="radio" value="asistencia">Asistencia</mat-radio-button>
+            <mat-radio-button class="radio" value="asistencia">Asistencia
+            </mat-radio-button>
         </mat-radio-group>
 
     </form>
@@ -56,6 +53,8 @@
 </div>
 
 <div mat-dialog-actions>
-    <button class="mt-10" (click)="handleSubmit()" mat-raised-button color="primary">Enviar</button>
-    <button class="mt-10" [mat-dialog-close] mat-raised-button color="warn">Cancelar</button>
+    <button class="mt-10" (click)="handleSubmit()" mat-raised-button
+            color="primary">Enviar</button>
+    <button class="mt-10" [mat-dialog-close] mat-raised-button
+            color="warn">Cancelar</button>
 </div>

@@ -1,7 +1,5 @@
 export interface Auth {
-    data: {
-        acc_token: string;
-    };
+    acces_token: string;
     menu: any[];
 }
 

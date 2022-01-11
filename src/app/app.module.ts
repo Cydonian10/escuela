@@ -11,7 +11,6 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { TokenInterceptor } from './core/interceptores/token.interceptor';
 
-import { MatTableExporterModule } from 'mat-table-exporter';
 
 
 @NgModule( {
@@ -27,9 +26,6 @@ import { MatTableExporterModule } from 'mat-table-exporter';
     // provideStorage( () => getStorage() ),
     AngularFireModule.initializeApp( environment.firebase ),
     AngularFirestoreModule,
-    MatTableExporterModule
-
-
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }

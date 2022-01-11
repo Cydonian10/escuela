@@ -24,7 +24,7 @@ export interface ITramite {
     descriptcionRecepcionista?: string;
     tramiteEstado?: string;
     visto?: boolean;
-    updateAt?: Date;
+    updated_at?: Date;
 }
 
 export interface CreateTramiteDto extends Omit<ITramite, 'id'> { }

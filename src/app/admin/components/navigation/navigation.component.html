@@ -5,8 +5,9 @@
                [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list *ngFor="let item of menu">
-      <h4>{{item.titulo}}</h4>
-      <a *ngFor="let sub of item.submenu" mat-list-item [routerLink]="sub.url">{{sub.titulo}}</a>
+      <h4>{{item?.titulo}}</h4>
+      <a *ngFor="let sub of item?.submenu" mat-list-item
+         [routerLink]="sub.url">{{sub.titulo}}</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -15,14 +16,13 @@
               type="button"
               aria-label="Toggle sidenav"
               mat-icon-button
-              (click)="drawer.toggle()"
-              *ngIf="isHandset$ | async">
+              (click)="drawer.toggle()">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <div class="nav_container">
         <span>fronEscuela</span>
         <div class="perfil">
-          <p>{{ usuario.name }} {{usuario.lastName}} </p>
+          <p>{{ usuario?.name }} {{usuario?.lastName}} </p>
           <button (click)="logout()"
                   color="warn" mat-raised-button>Salir</button>
         </div>
@@ -37,3 +37,5 @@
 
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+<!-- *ngIf="isHandset$ | async" -->

@@ -5,6 +5,51 @@ import { Injectable } from '@angular/core';
 } )
 export class MenuService {
 
+  menu = [
+    {
+      titulo: "Tramites",
+      submenu: [ {
+        titulo: "Tramites",
+        url: "/admin/tramites"
+      } ]
+    },
+
+    {
+      titulo: "Mantenimiento",
+      submenu: [
+        {
+          titulo: "Usuarios",
+          url: "/admin/usuarios"
+        },
+
+      ]
+    },
+    {
+      titulo: "Asitencias",
+      submenu: [
+        {
+          titulo: 'Asistencia',
+          url: '/admin/asistencias'
+        },
+        {
+          titulo: 'Salida',
+          url: '/admin/asistencias/salida'
+        },
+
+      ]
+    },
+    {
+      titulo: "Publicaciones",
+      submenu: [
+        {
+          titulo: 'Post',
+          url: '/admin/post'
+        }
+      ]
+    }
+
+  ];
+
   constructor() { }
 
   saveMenu ( value: any[] ) {
@@ -13,6 +58,6 @@ export class MenuService {
 
   getMenu () {
     const token = JSON.parse( localStorage.getItem( 'menu' )! ) || [];
-    return token;
+    return this.menu;
   }
 }

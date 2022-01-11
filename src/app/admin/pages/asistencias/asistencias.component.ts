@@ -10,6 +10,8 @@ import { Subscription } from 'rxjs';
 import { IAsitenciaLocalStorage } from '@models/asistencia.interface';
 import formatDistance from 'date-fns/formatDistance';
 import es from 'date-fns/locale/es';
+import format from 'date-fns/format';
+import { formatInTimeZone } from 'date-fns-tz';
 
 
 @Component( {
@@ -21,16 +23,18 @@ export class AsistenciasComponent implements OnInit, OnDestroy {
 
   subscription: Subscription = new Subscription();
   myInput: FormControl = new FormControl( '', Validators.required );
-  usuario: IUsuario = {
+  usuario = {
     id: 0,
     name: '',
     lastName: '',
     dni: '',
-    rol: Rol.pro,
+    rol: '',
     telefono: '',
     email: '',
     password: '',
-    gradoSeccion: ''
+    gradoSeccion: '',
+    created_at: new Date(),
+    update_at: new Date()
   };
   horaEntrada: Date = new Date();
   error: string = '';
@@ -39,7 +43,8 @@ export class AsistenciasComponent implements OnInit, OnDestroy {
   myForm: FormGroup = this.fb.group( {
     usuarioId: [ , Validators.required ],
     horaEntrada: [ , Validators.required ],
-    description: [ , Validators.required ]
+    description: [ , Validators.required ],
+    fecha: [ , Validators.required ]
   } );
 
   constructor(
@@ -70,7 +75,7 @@ export class AsistenciasComponent implements OnInit, OnDestroy {
     this.subscription.add(
       this.usuariosService.usuarioByEmail( this.myInput.value.trim() ).subscribe(
         {
-          next: resp => this.usuario = resp.data,
+          next: resp => { this.usuario = resp.data; console.log( this.usuario ); },
           error: ( e ) => this.error = e.error.message
         }
       )
@@ -83,8 +88,9 @@ export class AsistenciasComponent implements OnInit, OnDestroy {
   marcarAsistencia () {
     const horas = formatDistance( this.horaEntradaDiario, new Date(), { locale: es } );
     this.myForm.get( 'usuarioId' )?.setValue( this.usuario.id );
-    this.myForm.get( 'horaEntrada' )?.setValue( new Date() );
-    this.myForm.get( 'description' )?.setValue( 'Lego tarde' + ' ' + horas + 'tarde' );
+    this.myForm.get( 'horaEntrada' )?.setValue( formatInTimeZone( new Date(), 'America/New_York', 'yyyy/MM/dd HH:mm:ss' ) );
+    this.myForm.get( 'fecha' )?.setValue( formatInTimeZone( new Date(), 'America/New_York', 'yyyy/MM/d' ) );
+    this.myForm.get( 'description' )?.setValue( 'Llego tarde' + ' ' + horas + ' ' + 'tarde' );
 
     console.log( this.myForm.value );
 

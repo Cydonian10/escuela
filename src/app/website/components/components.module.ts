@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { CardServiceComponent } from './card-service/card-service.component';
 import { HeaderTwoComponent } from './header-two/header-two.component';
 import { FormCreateTramiteComponent } from './form-create-tramite/form-create-tramite.component';
+import { CardProfesorComponent } from './card-profesor/card-profesor.component';
 
 
 
@@ -14,6 +15,7 @@ import { FormCreateTramiteComponent } from './form-create-tramite/form-create-tr
     CardServiceComponent,
     HeaderTwoComponent,
     FormCreateTramiteComponent,
+    CardProfesorComponent,
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { FormCreateTramiteComponent } from './form-create-tramite/form-create-tr
     HeaderOneComponent,
     CardServiceComponent,
     HeaderTwoComponent,
-    FormCreateTramiteComponent
+    FormCreateTramiteComponent,
+    CardProfesorComponent
   ]
 } )
 export class ComponentsModule { }

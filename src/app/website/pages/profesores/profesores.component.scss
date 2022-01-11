@@ -1,0 +1,22 @@
+$color-primary: #015b99;
+
+.profesores-grid {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.container {
+    margin-top: 10px;
+}
+
+h1 {
+    text-align: center;
+    border-top: 5px solid $color-primary;
+    border-bottom: 5px solid $color-primary;
+    padding: 10px 0;
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}

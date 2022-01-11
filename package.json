@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "~13.0.0",
     "@angular/router": "~13.0.0",
     "date-fns": "^2.26.0",
+    "date-fns-tz": "^1.2.2",
     "firebase": "^9.4.0",
     "mat-table-exporter": "^10.2.4",
     "rxfire": "^6.0.0",

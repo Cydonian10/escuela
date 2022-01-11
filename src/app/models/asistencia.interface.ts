@@ -15,7 +15,7 @@ export interface IAsistencia {
     horaSalida: Date,
     horaEntrada: Date,
     fecha: Date,
-    asistio: boolean,
+    asistio: number,
     description: string,
     descriptionSalida: string,
     //   createAt: "2021 - 11 - 17T19: 06: 25.546Z",
@@ -32,37 +32,37 @@ export interface UpdateAsisteciaDto {
     horaSalida?: Date,
     horaEntrada?: Date,
     fecha?: Date,
-    asistio?: boolean,
+    asistio?: number,
     description?: string,
     descriptionSalida?: string,
 }
 
 export interface IAsitenciaLocalStorage {
-    usuario: IUsuario;
+    name: string;
+    lastName: string;
     id: number,
     horaSalida: Date,
     horaEntrada: Date,
     fecha: Date,
-    asistio: boolean,
+    asistio: number,
     description: string,
     descriptionSalida: string,
 }
 
 //!Asistencia por usuario
 
+export interface IAsistenciaNuevo {
+    name: string;
+    lastName: string;
+    id: number,
+    horaSalida: Date,
+    horaEntrada: Date,
+    fecha: Date,
+    asistio: number,
+    description: string,
+    descriptionSalida: string,
+}
+
 export interface IResponseAsistenciaByUsuario {
-    data: {
-        id: number;
-        name: string;
-        lastName: string;
-        dni: string;
-        rol: Rol;
-        telefono: string;
-        email: string;
-        password: string;
-        gradoSeccion: string;
-
-        asistencia: IAsistencia[];
-    };
-
+    data: IAsistenciaNuevo[];
 }

@@ -25,11 +25,11 @@ export class ModalInfoComponent implements OnInit {
     fecha: new Date(),
     archivoPadre: '',
 
-    archivoDescargarAdmin: 'asdf',
+    archivoDescargarAdmin: '',
     descriptcionRecepcionista: '',
     tramiteEstado: '',
     visto: false,
-    updateAt: new Date(),
+    updated_at: new Date(),
 
   };
   @Output() onShow: EventEmitter<boolean> = new EventEmitter<boolean>();

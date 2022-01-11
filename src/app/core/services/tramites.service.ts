@@ -22,34 +22,34 @@ export class TramitesService {
 
   findAll () {
     if ( this._tramite$.value.length === 0 ) {
-      this.http.get<TramiteResponse>( `${ this.apiUrl }/tramites` ).subscribe(
+      this.http.get<TramiteResponse>( `${ this.apiUrl }/api/tramites` ).subscribe(
         resp => this._tramite$.next( resp.data )
       );
     }
   }
 
   findOne ( id: number ) {
-    return this.http.get<CreateTramiteReponse>( `${ this.apiUrl }/tramites/${ id }` );
+    return this.http.get<CreateTramiteReponse>( `${ this.apiUrl }/api/tramites/${ id }` );
   }
 
   refresh () {
-    this.http.get<TramiteResponse>( `${ this.apiUrl }/tramites` ).subscribe(
+    this.http.get<TramiteResponse>( `${ this.apiUrl }/api/tramites` ).subscribe(
       resp => this._tramite$.next( resp.data )
     );
   }
 
   create ( data: CreateTramiteDto ) {
-    return this.http.post<CreateTramiteReponse>( `${ this.apiUrl }/tramites`, data );
+    return this.http.post<CreateTramiteReponse>( `${ this.apiUrl }/api/tramites`, data );
   }
 
   update ( changes: UpdateTramiteDto, id: number ) {
-    return this.http.put<CreateTramiteReponse>( `${ this.apiUrl }/tramites/${ id }`, changes ).pipe(
+    return this.http.put<CreateTramiteReponse>( `${ this.apiUrl }/api/tramites/${ id }`, changes ).pipe(
       tap( () => this.refresh() )
     );
   }
 
   remove ( id: number ) {
-    return this.http.delete( `${ this.apiUrl }/tramites/${ id }` ).pipe(
+    return this.http.delete( `${ this.apiUrl }/api/tramites/${ id }` ).pipe(
       tap( () => this.refresh() )
     );
   }

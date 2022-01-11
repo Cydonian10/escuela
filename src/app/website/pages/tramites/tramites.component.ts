@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
-@Component({
+@Component( {
   selector: 'app-tramites',
   templateUrl: './tramites.component.html',
-  styleUrls: ['./tramites.component.scss']
-})
+  styleUrls: [ './tramites.component.scss' ]
+} )
 export class TramitesComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit (): void {
   }
 
 }

@@ -16,7 +16,8 @@ const routes: Routes = [
   {
     path: "",
     children: [
-      { path: "tramites", loadChildren: () => import( "./pages/tramites/tramites.module" ).then( m => m.TramitesModule ) }
+      { path: "tramites", loadChildren: () => import( "./pages/tramites/tramites.module" ).then( m => m.TramitesModule ) },
+      { path: "profesores", loadChildren: () => import( "./pages/profesores/profesores.module" ).then( m => m.ProfesoresModule ) }
     ]
   },
   {

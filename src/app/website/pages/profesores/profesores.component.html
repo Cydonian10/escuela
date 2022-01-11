@@ -1,0 +1,9 @@
+<app-header-two></app-header-two>
+
+<div class="container">
+    <h1> Profesores </h1>
+
+    <div class="profesores-grid">
+        <app-card-profesor *ngFor="let profe of profesores" [profesor]="profe"></app-card-profesor>
+    </div>
+</div>

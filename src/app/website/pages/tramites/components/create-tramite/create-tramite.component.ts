@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { TramitesService } from '@service/tramites.service';
 import { UploadImageService } from '@service/upload-image.service';
 import { CreateTramiteDto } from '@models/tramite.interface';
+import { formatInTimeZone } from 'date-fns-tz';
 
 
 @Component( {
@@ -26,10 +27,10 @@ export class CreateTramiteComponent implements OnInit {
     dni: [ '', [ Validators.required ] ],
     email: [ '', [ Validators.required ] ],
     descriptcionPadre: [ '', [ Validators.required ] ],
-    tramiteNombre: [ '', [ Validators.required ] ],
+    tramiteNombre: [ 'Selecciona una opción', [ Validators.required ] ],
     telefono: [ '', [ Validators.required ] ],
     archivoPadre: [],
-    fecha: [ new Date(), [ Validators.required ] ],
+    fecha: [ formatInTimeZone( new Date(), 'America/New_York', 'yyyy/MM/dd HH:mm:ss' ), [ Validators.required ] ],
   } );
 
 

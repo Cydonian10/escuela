@@ -20,6 +20,8 @@ export interface IUsuario {
     email: string;
     password: string;
     gradoSeccion: string;
+    created_at: Date,
+    update_at: Date;
 }
 
 export interface CreateUserDto extends Omit<IUsuario, 'id'> { }

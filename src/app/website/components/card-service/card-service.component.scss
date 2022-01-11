@@ -1,7 +1,6 @@
 @import "/src/scss/variables.scss";
 
 figure {
-
     object-fit: cover;
 }
 
@@ -35,7 +34,7 @@ img {
 }
 
 .card-content {
-    text-align: justify;
+    text-align: center;
 }
 
 .card-footer {
@@ -55,8 +54,6 @@ button {
     &:active {
         transform: scale(0.99);
     }
-
-
 }
 
 .top {

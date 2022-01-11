@@ -20,16 +20,15 @@ export class AsistenciasService {
 
 
   create ( data: CreateAsistenciaDto ) {
-    return this.http.post<IAsitenciaResponse>( `${ this.apiUrl }/asistencias`, data );
+    return this.http.post<IAsitenciaResponse>( `${ this.apiUrl }/api/asistencias`, data );
   }
 
   update ( changes: UpdateAsisteciaDto, id: number ) {
-    return this.http.put<IAsitenciaResponse>( `${ this.apiUrl }/asistencias/${ id }`, changes );
+    return this.http.put<IAsitenciaResponse>( `${ this.apiUrl }/api/asistencias/${ id }`, changes );
   };
 
   localStorageAsistencia ( asistencia: IAsitenciaLocalStorage ) {
     this.asistenciasDelDia.push( asistencia );
-    console.log( this.asistenciasDelDia, 'servicio asistecias' );
     localStorage.setItem( 'asistenciasDia', JSON.stringify( this.asistenciasDelDia ) );
   }
 
@@ -47,7 +46,7 @@ export class AsistenciasService {
 
   //!TRAERME LAS ASISTENCIAS POR USUARIO
   asistenciaByUsuario ( id: number ) {
-    return this.http.get<IResponseAsistenciaByUsuario>( `${ this.apiUrl }/users/usuarios-asistencias/${ id }` );
+    return this.http.get<IResponseAsistenciaByUsuario>( `${ this.apiUrl }/api/users/usuarios-asistencias/${ id }` );
   }
 
   limpiarRegistrosAsitencia () {

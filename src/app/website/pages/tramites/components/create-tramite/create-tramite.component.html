@@ -27,7 +27,8 @@
                     <i></i>
                 </span>
             </div>
-            <span *ngIf="campoValido('name')" class="error">{{ 'Campo requerido' | titlecase }}</span>
+            <span *ngIf="campoValido('name')"
+                  class="error">{{ 'Campo requerido' | titlecase }}</span>
         </div>
 
         <div class="apellidos">
@@ -39,7 +40,8 @@
                     <i></i>
                 </span>
             </div>
-            <span *ngIf="campoValido('apellidos')" class="error">{{ 'Campo requerido' | titlecase }}</span>
+            <span *ngIf="campoValido('apellidos')"
+                  class="error">{{ 'Campo requerido' | titlecase }}</span>
         </div>
 
     </div>
@@ -54,7 +56,8 @@
                 <i></i>
             </span>
         </div>
-        <span *ngIf="campoValido('email')" class="error">{{ 'Campo requerido' | titlecase }}</span>
+        <span *ngIf="campoValido('email')"
+              class="error">{{ 'Campo requerido' | titlecase }}</span>
     </div>
 
     <!--! telefno y dni -->
@@ -67,7 +70,8 @@
                 <span class="focus-border">
                     <i></i>
                 </span>
-                <span *ngIf="campoValido('telefono')" class="error">{{ 'Campo requerido' | titlecase }}</span>
+                <span *ngIf="campoValido('telefono')"
+                      class="error">{{ 'Campo requerido' | titlecase }}</span>
             </div>
         </div>
         <div class="dni">
@@ -78,7 +82,8 @@
                 <span class="focus-border">
                     <i></i>
                 </span>
-                <span *ngIf="campoValido('dni')" class="error">{{ 'Campo requerido' | titlecase }}</span>
+                <span *ngIf="campoValido('dni')"
+                      class="error">{{ 'Campo requerido' | titlecase }}</span>
             </div>
         </div>
     </div>
@@ -89,12 +94,13 @@
         <select formControlName="tramiteNombre" class="select-css">
             <option>Selecciona una opción</option>
             <option value="matricula">Matricula</option>
-            <option value="Martes">Martes</option>
-            <option value="Miércoles">Miércoles</option>
-            <option value="Jueves">Jueves</option>
-            <option value="Viernes">Viernes</option>
+            <option value="notas">Notas</option>
+            <option value="permiso">Permiso</option>
+            <option value="vacante">Vacante</option>
+            <option value="otro">otro</option>
         </select>
-        <span *ngIf="campoValido('tramiteNombre')" class="error">{{ 'Campo requerido' | titlecase }}</span>
+        <span *ngIf="campoValido('tramiteNombre')"
+              class="error">{{ 'Campo requerido' | titlecase }}</span>
     </div>
 
     <div class="file">
@@ -119,7 +125,8 @@
                 <i></i>
             </span>
         </div>
-        <span *ngIf="campoValido('descriptcionPadre')" class="error">{{ 'Campo requerido' | titlecase }}</span>
+        <span *ngIf="campoValido('descriptcionPadre')"
+              class="error">{{ 'Campo requerido' | titlecase }}</span>
     </div>
 
 
@@ -129,4 +136,5 @@
 
 </form>
 
-<app-card-tramite (onShow)="onshow($event)" [show]="show" [codigo]="codigo"></app-card-tramite>
+<app-card-tramite (onShow)="onshow($event)" [show]="show" [codigo]="codigo">
+</app-card-tramite>

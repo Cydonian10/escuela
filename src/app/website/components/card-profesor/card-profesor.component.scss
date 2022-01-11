@@ -1,0 +1,36 @@
+.card {
+    max-width: 400px;
+    min-width: 350px;
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.33);
+    -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.33);
+    -moz-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.33);
+    background-color: white;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+}
+
+.card-title {
+    p {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    small {
+        color: hsl(0, 0%, 52%);
+    }
+}
+
+.card-body {
+
+    div {
+        margin-top: 6px;
+        display: flex;
+
+        p {
+            margin-right: 10px;
+            font-weight: 600;
+        }
+    }
+
+}

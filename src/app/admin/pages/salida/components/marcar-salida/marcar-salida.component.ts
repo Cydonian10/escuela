@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { formatInTimeZone } from 'date-fns-tz';
 
 @Component( {
   selector: 'app-marcar-salida',
@@ -24,8 +25,7 @@ export class MarcarSalidaComponent implements OnInit {
   }
 
   handleSubmit () {
-
-    this.myForm.get( 'horaSalida' )?.setValue( new Date() );
+    this.myForm.get( 'horaSalida' )?.setValue( formatInTimeZone( new Date(), 'America/New_York', 'yyyy/MM/dd HH:mm:ss' ) );
     this.dialogRef.close( this.myForm.value );
   }
 

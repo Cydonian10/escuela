@@ -17,7 +17,6 @@ export class UpdateUsuarioComponent implements OnInit {
     rol: [ 'profesor', [ Validators.required ] ],
     telefono: [ '1', [ Validators.required ] ],
     email: [ '1', [ Validators.required ] ],
-    password: [ '1', [ Validators.required ] ],
     gradoSeccion: [ '1', [ Validators.required ] ]
   } );
 
