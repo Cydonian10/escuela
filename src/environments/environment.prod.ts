@@ -8,5 +8,6 @@ export const environment = {
     authDomain: 'escuela-angular-7ca00.firebaseapp.com',
     messagingSenderId: '663565390481',
   },
-  production: true
+  production: true,
+  apiUrl: "https://escuela.herokuapp.com"
 };
